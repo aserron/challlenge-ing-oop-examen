@@ -17,7 +17,7 @@ public class Juego {
     /**
      * Información sobre el ciclo de vida del juego
      */
-    private ArrayList<String> updateStatusMsgs = [];
+    private ArrayList<String> updateStatusMsgs = new ArrayList<>();
     private static Juego instance;
 
     // Private constructor to prevent instantiation
@@ -27,14 +27,32 @@ public class Juego {
     }
 
     // Public static method to get the instance
-    public static Juego getInstance() {
+    private static Juego getInstance() {
         if (instance == null) {
             instance = new Juego();
         }
         return instance;
     }
 
-    // Method to start the game
+    /**
+     * @implNote REQUERIDO #2: El juego debe estar en estado ESPERANDO para poder ser iniciado
+     */
+    public static void main(String[] args) {
+        // Obtener primera instancia
+        Juego juego1 = Juego.getInstance();
+        System.out.println("Primera instancia creada: " + juego1);
+        
+        // Obtener segunda instancia
+        Juego juego2 = Juego.getInstance();
+        System.out.println("Segunda instancia creada: " + juego2);
+        
+        // Demostrar que son la misma instancia
+        System.out.println("¿Son la misma instancia? " + (juego1 == juego2));
+    }
+
+    /**
+     * @implNote REQUERIDO: 1) El juego debe estar en estado ESPERANDO para poder ser iniciado
+     */
     public void iniciarJuego() {
         updateStatus(ESTADOS.INICIADO);
         System.out.println("El juego ha comenzado!");
@@ -55,14 +73,18 @@ public class Juego {
         System.out.println("El juego ha sido finalizado!");
     }
 
-    private void cuandoFallaJuego(Object reason) {
-        updateStatus(ESTADOS.FALLADO);
-        System.out.println("El juego ha fallado!");
-    }
-
     private void updateStatus(ESTADOS nuevoEstado) {
         estado = nuevoEstado;
         updateStatusMsgs.add("El juego ha comenzado!");
+    }
+
+    public void info() {
+        System.out.println("Estado actual del juego: " + estado);
+        System.out.println("Información sobre el ciclo de vida del juego:");
+        // imporimir uno por lina
+        for (String msg : updateStatusMsgs) {
+            System.out.println(msg);
+        }        
     }
 
     // cleanup fn
