@@ -4,7 +4,7 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package com.pruebas.operar;
+package  com.pruebas.operar;
 
 public class Multiplicacion implements Operable {
     @Override

@@ -1,4 +1,4 @@
-package com.pruebas.exceptions;
+package  com.pruebas.customexc;
 
 import java.util.ArrayList;
 import java.util.List;

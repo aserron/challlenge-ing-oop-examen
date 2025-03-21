@@ -1,12 +1,12 @@
-package com.pruebas.calc;
+package com.pruebas.overloadcal;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CalculadoraTest {
+public class OverCalculadoraTest {
 
-    private final Calculadora calculadora = new Calculadora();
+    private final OverCalculadora calculadora = new OverCalculadora();
 
     @Test
     public void testSumarDosEnteros() {

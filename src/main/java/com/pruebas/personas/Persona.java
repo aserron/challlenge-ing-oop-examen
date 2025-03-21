@@ -1,10 +1,13 @@
-package prueba.personas;
+package com.pruebas.personas;
 
 public class Persona {
     private String nombre;
     private int edad;
     
     public Persona(String nombre, int edad) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
+        }
         this.nombre = nombre;
         this.edad = edad;
     }
@@ -14,6 +17,9 @@ public class Persona {
     }
     
     public void setNombre(String nombre) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
+        }
         this.nombre = nombre;
     }
     
@@ -25,7 +31,7 @@ public class Persona {
         this.edad = edad;
     }
     
-    public void saludar() {
-        System.out.println("Hola, soy " + nombre + " y tengo " + edad + " años.");
+    public String saludar() {
+        return "Hola, soy " + nombre + " y tengo " + edad + " años.";
     }
 }
