@@ -44,8 +44,11 @@ class CuentaBancariaTest {
         cuentaCorriente.depositar(500.0);
         assertEquals(500.0, cuentaCorriente.getSaldo());
 
+
+        double SOBREGIRO = 1000.0;
+        
         // Realizar retiro con sobregiro
-        assertTrue(cuentaCorriente.retirar(1000.0));
+        assertTrue(cuentaCorriente.retirar(SOBREGIRO));
         
         // Verificar que se aplicó el sobregiro y la comisión
         double sobregiro = 1000.0 - 500.0; // = 500.0
