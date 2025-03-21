@@ -4,7 +4,7 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package prueba.operar;
+package com.pruebas.operar;
 
 public class Suma implements Operable {
     @Override
