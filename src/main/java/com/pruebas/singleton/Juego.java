@@ -1,109 +1,72 @@
-package  com.pruebas.singleton;
+package com.pruebas.singleton;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Juego implements Serializable {
-    private static volatile Juego instance;
-    private static final long serialVersionUID = 1L;
-    
-    // Game state
-    private boolean isRunning;
-    private int score;
-    private String currentLevel;
-    
+enum ESTADOS {
+    ESPERANDO,
+    INICIADO,
+    CORRIENDO,
+    PAUSADO,
+    REANUDADO,
+    FINALIZADO,
+    FALLADO
+}
+
+public class Juego {
+    private ESTADOS estado;
+    /**
+     * Información sobre el ciclo de vida del juego
+     */
+    private ArrayList<String> updateStatusMsgs = [];
+    private static Juego instance;
+
     // Private constructor to prevent instantiation
     private Juego() {
-        // Prevent reflection attack
-        if (instance != null) {
-            throw new IllegalStateException("Ya existe una instancia del juego");
-        }
-        
-        // Initialize game state
-        this.isRunning = false;
-        this.score = 0;
-        this.currentLevel = "Nivel 1";
+        this.estado = ESTADOS.ESPERANDO;
+        this.updateStatusMsgs.add("Juego esperando a que el usuario inicie el juego");
     }
-    
+
     // Public static method to get the instance
     public static Juego getInstance() {
         if (instance == null) {
-            synchronized (Juego.class) {
-                if (instance == null) {
-                    instance = new Juego();
-                }
-            }
+            instance = new Juego();
         }
         return instance;
     }
-    
-    // Prevent cloning
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        throw new CloneNotSupportedException("No se puede clonar el juego");
-    }
-    
-    // Handle serialization
-    protected Object readResolve() {
-        return getInstance();
-    }
-    
-    // Game methods with state management
+
+    // Method to start the game
     public void iniciarJuego() {
-        if (!isRunning) {
-            isRunning = true;
-            System.out.println("Juego iniciado!");
-        } else {
-            System.out.println("El juego ya está en ejecución");
-        }
+        updateStatus(ESTADOS.INICIADO);
+        System.out.println("El juego ha comenzado!");
     }
-    
+
     public void pausarJuego() {
-        if (isRunning) {
-            isRunning = false;
-            System.out.println("Juego pausado!");
-        } else {
-            System.out.println("El juego ya está pausado");
-        }
+        updateStatus(ESTADOS.PAUSADO);
+        System.out.println("El juego ha sido pausado!");
     }
-    
+
     public void reanudarJuego() {
-        if (!isRunning) {
-            isRunning = true;
-            System.out.println("Juego reanudado!");
-        } else {
-            System.out.println("El juego ya está en ejecución");
-        }
+        updateStatus(ESTADOS.CORRIENDO);
+        System.out.println("El juego ha sido reanudado!");
     }
-    
+
     public void finalizarJuego() {
-        isRunning = false;
-        score = 0;
-        currentLevel = "Nivel 1";
-        System.out.println("Juego finalizado!");
+        updateStatus(ESTADOS.FINALIZADO);
+        System.out.println("El juego ha sido finalizado!");
     }
-    
-    // Getters for game state
-    public boolean isRunning() {
-        return isRunning;
+
+    private void cuandoFallaJuego(Object reason) {
+        updateStatus(ESTADOS.FALLADO);
+        System.out.println("El juego ha fallado!");
     }
-    
-    public int getScore() {
-        return score;
+
+    private void updateStatus(ESTADOS nuevoEstado) {
+        estado = nuevoEstado;
+        updateStatusMsgs.add("El juego ha comenzado!");
     }
-    
-    public String getCurrentLevel() {
-        return currentLevel;
+
+    // cleanup fn
+    public void limpiarEstado() {
+        updateStatusMsgs.clear();
     }
-    
-    // Method to update score
-    public void updateScore(int points) {
-        this.score += points;
-        System.out.println("Puntuación actualizada: " + this.score);
-    }
-    
-    // Method to change level
-    public void changeLevel(String newLevel) {
-        this.currentLevel = newLevel;
-        System.out.println("Nivel cambiado a: " + newLevel);
-    }
-} 
+}

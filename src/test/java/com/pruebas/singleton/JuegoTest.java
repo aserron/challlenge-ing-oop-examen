@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.io.*;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 public class JuegoTest {
     
@@ -107,8 +106,6 @@ public class JuegoTest {
     @Test
     public void testClonePrevention() {
         Juego juego = Juego.getInstance();
-        assertThrows(CloneNotSupportedException.class, () -> {
-            juego.clone();
-        }, "Debería lanzar CloneNotSupportedException al intentar clonar");
+        assertThrows(CloneNotSupportedException.class, juego::clone, "Debería lanzar CloneNotSupportedException al intentar clonar");
     }
 } 
