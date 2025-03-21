@@ -4,7 +4,7 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package prueba.animales;
+package main.java.com.pruebas.animales;
 
 public class Perro extends Animal {
 

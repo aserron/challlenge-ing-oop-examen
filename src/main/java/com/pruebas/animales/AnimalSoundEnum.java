@@ -1,4 +1,4 @@
-package prueba.animales;
+package main.java.com.pruebas.animales;
 
 public enum AnimalSoundEnum {
     DOG("woof"),
