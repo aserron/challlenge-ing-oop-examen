@@ -28,13 +28,21 @@ public abstract class CuentaBancaria {
     }
 
     // Método para retirar dinero
-    public boolean retirar(double monto) {
-        if (monto > 0 && monto <= saldo) {
-            saldo -= monto;
-            System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
-            return true;
+    public double retirar(double monto) {
+        
+        if(monto <= saldo) {
+            throw new IllegalArgumentException("Monto invalido: El monto excede su saldo actual. monto=" + monto + " saldo=" + saldo);
         }
-        return false;
+
+        if(monto <= 0) {            
+            throw new IllegalArgumentException("Monto inválido: El monto debe ser mayor que 0  monto=" + monto);            
+        }
+
+        
+        saldo -= monto;
+        System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
+        
+        return monto;
     }
 
     // Getters
