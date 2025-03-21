@@ -10,21 +10,21 @@ Este es un proyecto Java que implementa un sistema de gestión de empleados util
 
 ## Instalación
 
-### 1. Clonar el repositorio:  
+### 1. Clonar el repositorio  
 
 ```bash  
-    git clone [URL_DEL_REPOSITORIO]
-    cd gestion-empleados
+    git clone git
+    cd challlenge-ing-oop-examen
 
 ```
 
-### 2. Compilar el proyecto:
+### 2. Compilar el proyecto
 
 ```bash
 mvn clean install
 ```
 
-### 3. Ejecutar las pruebas:
+### 3. Ejecutar las pruebas
 
 ```bash
 mvn test
@@ -37,7 +37,7 @@ gestion-empleados/
 ├── src/                    # Código fuente
 ├── docs/                   # Documentación
 ├── pom.xml                 # Configuración de Maven
-└── README.md              # Este archivo
+└── README.md               # Este archivo
 ```
 
 ## Tecnologías Utilizadas
@@ -48,20 +48,9 @@ gestion-empleados/
 
 ## Configuración del IDE
 
-### 1. Abrir el proyecto en IntelliJ IDEA
-
-### 2. Importar el proyecto como proyecto Maven
-
-### 3. Asegurarse de que el JDK 11 esté configurado en el proyecto
-
-## Ejecución
-
-Para ejecutar el proyecto:
-
-```bash
-mvn clean package
-java -jar target/gestion-empleados-1.0-SNAPSHOT.jar
-```
+#### 1. Abrir el proyecto en IntelliJ IDEA
+#### 2. Importar el proyecto como proyecto Maven
+#### 3. Asegurarse de que el JDK 11 esté configurado en el proyecto
 
 ## Contribución
 
@@ -71,12 +60,13 @@ java -jar target/gestion-empleados-1.0-SNAPSHOT.jar
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abrir un Pull Request
 
-## Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+-----
+### Contacto
+Andrés Serrón [aserron.dev@gmail.com](mailto:aserron.dev@gmail.com)   
+[@andresserron](https://twitter.com/andresserron)
 
-## Contacto
-
-Andrés Serrón - [@andresserron](https://twitter.com/andresserron) - <aserron.dev@gmail.com>
-
-Link del Proyecto: [https://github.com/tuusuario/gestion-empleados](https://github.com/aserron/jobs-ascende-examen-oop)
+### Link del Proyecto: 
+[https://github.com/aserron/challlenge-ing-oop-examen](https://github.com/aserron/challlenge-ing-oop-examen)
+     
+ 
