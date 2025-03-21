@@ -1,4 +1,4 @@
-package main.java.com.pruebas.gestion;
+package com.pruebas.gestion;
 
 import java.util.ArrayList;
 import java.util.List;
