@@ -1,4 +1,4 @@
-package com.pruebas.exceptions;
+package  com.pruebas.customexc;
 
 public class Producto {
     private int id;

@@ -1,7 +1,11 @@
-package com.pruebas.exceptions;
+package  com.pruebas.customexc;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.pruebas.customexc.Inventario;
+import com.pruebas.customexc.Producto;
+import com.pruebas.customexc.ProductoNoEncontradoException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

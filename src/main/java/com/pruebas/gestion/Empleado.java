@@ -1,4 +1,4 @@
-package com.pruebas.gestion;
+package  com.pruebas.gestion;
 
 public class Empleado {
     private String nombre;

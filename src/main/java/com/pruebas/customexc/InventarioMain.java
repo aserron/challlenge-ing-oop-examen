@@ -1,4 +1,4 @@
-package com.pruebas.exceptions;
+package  com.pruebas.customexc;
 
 public class InventarioMain {
     public static void main(String[] args) {
