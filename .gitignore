@@ -1,7 +1,19 @@
-### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
+
+### IntelliJ IDEA ###
+.idea
+.idea/
+.idea/*.xml
+.idea/*.iml
+.idea/*.md
+!.idea/vcs.xml
+!.idea/encodings.xml
+!.idea/compiler.xml
+!.idea/dictionaries.xml
+!.idea/.gitignore
 
 ### Eclipse ###
 .apt_generated
@@ -25,5 +37,8 @@ bin/
 ### VS Code ###
 .vscode/
 
+
+
 ### Mac OS ###
 .DS_Store
+src/main/java/com/pruebas/banco/CuentaBancaria.java
