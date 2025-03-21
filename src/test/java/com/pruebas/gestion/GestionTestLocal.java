@@ -1,4 +1,4 @@
-package main.java.com.pruebas.gestion;
+package com.pruebas.gestion;
 
 import org.junit.jupiter.api.*;
 
@@ -58,7 +58,7 @@ public class GestionTestLocal {
 
     @Test
     void testToString() {
-        String expectedString = "main.java.com.gestion.prueba.Empleado{id=1, nombre='Juan Pérez', salario=30000.0}";
+        String expectedString = "main.com.gestion.prueba.Empleado{id=1, nombre='Juan Pérez', salario=30000.0}";
         assertEquals(expectedString, empleado1.toString());
     }
 

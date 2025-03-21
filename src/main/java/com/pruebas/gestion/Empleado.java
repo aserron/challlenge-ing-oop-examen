@@ -1,4 +1,4 @@
-package main.java.com.pruebas.gestion;
+package com.pruebas.gestion;
 
 public class Empleado {
     private String nombre;
@@ -35,7 +35,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "main.java.com.gestion.prueba.Empleado{" +
+        return "main.com.gestion.prueba.Empleado{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", salario=" + salario +
