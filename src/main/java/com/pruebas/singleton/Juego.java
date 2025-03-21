@@ -27,7 +27,7 @@ public class Juego {
     }
 
     // Public static method to get the instance
-    private static Juego getInstance() {
+    public static Juego getInstance() {
         if (instance == null) {
             instance = new Juego();
         }
@@ -85,6 +85,14 @@ public class Juego {
         for (String msg : updateStatusMsgs) {
             System.out.println(msg);
         }        
+    }
+
+    public ESTADOS getEstado() {
+        return estado;
+    }
+
+    public ArrayList<String> getUpdateStatusMsgs() {
+        return updateStatusMsgs;
     }
 
     // cleanup fn

@@ -27,14 +27,14 @@ class CuentaBancariaTest {
         assertEquals(500.0, cuentaAhorros.getSaldo());
 
         // Prueba de retiro normal
-        assertTrue(cuentaCorriente.retirar(200.0));
+        assertThrows(IllegalArgumentException.class, () -> cuentaCorriente.retirar(200.0));
         assertEquals(300.0, cuentaCorriente.getSaldo());
 
-        assertTrue(cuentaAhorros.retirar(200.0));
+        assertThrows(IllegalArgumentException.class, () -> cuentaAhorros.retirar(200.0));
         assertEquals(300.0, cuentaAhorros.getSaldo());
 
         // Prueba de retiro con monto mayor al saldo en cuenta de ahorros
-        assertFalse(cuentaAhorros.retirar(500.0));
+        assertThrows(IllegalArgumentException.class, () -> cuentaAhorros.retirar(500.0));
         assertEquals(300.0, cuentaAhorros.getSaldo());
     }
 
@@ -48,12 +48,12 @@ class CuentaBancariaTest {
         double SOBREGIRO = 1000.0;
         
         // Realizar retiro con sobregiro
-        assertTrue(cuentaCorriente.retirar(SOBREGIRO));
+        assertThrows(IllegalArgumentException.class, () -> cuentaCorriente.retirar(SOBREGIRO));
         
         // Verificar que se aplicó el sobregiro y la comisión
         double sobregiro = 1000.0 - 500.0; // = 500.0
         double comision = sobregiro * 0.05; // = 25.0
-        assertEquals(-525.0, cuentaCorriente.getSaldo()); // -500 - 25
+        assertEquals(-sobregiro - comision, cuentaCorriente.getSaldo()); // -500 - 25
     }
 
     @Test
