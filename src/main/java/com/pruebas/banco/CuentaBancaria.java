@@ -4,39 +4,40 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package prueba.banco;
+package com.pruebas.banco;
 
 public abstract class CuentaBancaria {
+    // Atributos protegidos para que las subclases puedan acceder
     protected String numeroCuenta;
     protected double saldo;
     protected String titular;
 
+    // Constructor
     public CuentaBancaria(String numeroCuenta, String titular) {
         this.numeroCuenta = numeroCuenta;
         this.titular = titular;
         this.saldo = 0.0;
     }
 
+    // Método para depositar dinero
     public void depositar(double monto) {
         if (monto > 0) {
             saldo += monto;
             System.out.println("Depósito exitoso. Nuevo saldo: $" + saldo);
-        } else {
-            System.out.println("El monto del depósito debe ser mayor a 0");
         }
     }
 
+    // Método para retirar dinero
     public boolean retirar(double monto) {
         if (monto > 0 && monto <= saldo) {
             saldo -= monto;
             System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
             return true;
-        } else {
-            System.out.println("No se puede realizar el retiro. Saldo insuficiente o monto inválido");
-            return false;
         }
+        return false;
     }
 
+    // Getters
     public double getSaldo() {
         return saldo;
     }
@@ -49,6 +50,6 @@ public abstract class CuentaBancaria {
         return titular;
     }
 
-    // Método abstracto para calcular intereses que será implementado por las subclases
+    // Método abstracto para calcular intereses
     public abstract void calcularInteres();
 } 

@@ -1,4 +1,4 @@
-package prueba.banco;
+package  com.pruebas.banco;
 
 public class CuentaMain {
     public static void main(String[] args) {

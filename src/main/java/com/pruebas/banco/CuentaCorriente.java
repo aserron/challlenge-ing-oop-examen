@@ -4,7 +4,9 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package prueba.banco;
+package  com.pruebas.banco;
+
+import com.pruebas.banco.exceptions.CuentaSobregiradaException;
 
 public class CuentaCorriente extends CuentaBancaria {
     private double limiteSobregiro;
@@ -27,14 +29,9 @@ public class CuentaCorriente extends CuentaBancaria {
                 System.out.println("Retiro con sobregiro exitoso. Comisión aplicada: $" + comision);
                 System.out.println("Nuevo saldo: $" + saldo);
                 return true;
-            } else {
-                System.out.println("No se puede realizar el retiro. Excede el límite de sobregiro");
-                return false;
             }
-        } else {
-            System.out.println("El monto del retiro debe ser mayor a 0");
-            return false;
         }
+        return false;
     }
 
     @Override
