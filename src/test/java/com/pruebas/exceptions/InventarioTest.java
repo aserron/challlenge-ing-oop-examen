@@ -1,13 +1,9 @@
-package test.java.com.pruebas.exceptions;
+package com.pruebas.exceptions;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import main.java.com.pruebas.exceptions.Inventario;
-import main.java.com.pruebas.exceptions.Producto;
-import main.java.com.pruebas.exceptions.ProductoNoEncontradoException;
 
 class InventarioTest {
     private Inventario inventario;
@@ -29,7 +25,7 @@ class InventarioTest {
         inventario.agregarProducto(auriculares);
         
         assertDoesNotThrow(() -> {
-            Producto encontrado = inventario.buscarProductoPorId(3);
+            Producto encontrado = inventario.buscarProductoStreamPorId(3);
             assertEquals(auriculares, encontrado);
         });
     }
@@ -37,7 +33,7 @@ class InventarioTest {
     @Test
     void testBuscarProductoExistente() {
         assertDoesNotThrow(() -> {
-            Producto encontrado = inventario.buscarProductoPorId(1);
+            Producto encontrado = inventario.buscarProductoStreamPorId(1);
             assertEquals(laptop, encontrado);
         });
     }
@@ -46,7 +42,7 @@ class InventarioTest {
     void testBuscarProductoNoExistente() {
         ProductoNoEncontradoException exception = assertThrows(
             ProductoNoEncontradoException.class,
-            () -> inventario.buscarProductoPorId(999)
+            () -> inventario.buscarProductoStreamPorId(999)
         );
         
         assertTrue(exception.getMessage().contains("No se encontró el producto con ID: 999"));
@@ -64,5 +60,17 @@ class InventarioTest {
     void testProductoNoEncontradoException() {
         ProductoNoEncontradoException exception = new ProductoNoEncontradoException("Test message");
         assertEquals("Test message", exception.getMessage());
+    }
+
+    @Test
+    void testBuscarProductoConIdInvalido() {
+        // This test expects to fail by throwing ProductoNoEncontradoException
+        ProductoNoEncontradoException exception = assertThrows(
+            ProductoNoEncontradoException.class,
+            () -> inventario.buscarProductoStreamPorId(-1)
+        );
+        
+        // Verify the exception message
+        assertEquals("No se encontró el producto con ID: -1", exception.getMessage());
     }
 } 
