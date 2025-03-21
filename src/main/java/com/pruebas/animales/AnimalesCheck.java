@@ -4,9 +4,9 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package main.java.com.pruebas.animales;
+package  com.pruebas.animales;
 
-class AnimalesTest {
+class AnimalesCheck {
     public static void main(String[] args) {
         // Crear instancias de Perro y Gato
         Animal perro = new Perro();
