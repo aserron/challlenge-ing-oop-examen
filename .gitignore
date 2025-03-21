@@ -23,6 +23,7 @@ out/
 .settings
 .springBeans
 .sts4-cache
+
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
@@ -42,3 +43,7 @@ bin/
 ### Mac OS ###
 .DS_Store
 src/main/java/com/pruebas/banco/CuentaBancaria.java
+src/main/java/com/zoo/Humano.java
+
+/temp/
+/temp/**/*.*
