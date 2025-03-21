@@ -1,16 +1,11 @@
-package test.java.com.pruebas.animales;
-
-import main.java.com.pruebas.animales.Animal;
-import main.java.com.pruebas.animales.AnimalSoundEnum;
-import main.java.com.pruebas.animales.Gato;
-import main.java.com.pruebas.animales.Perro;
+package com.pruebas.animales;
 
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class AnimalTest {
+public class AnimalTest {
 
     @Test
     void testPerroHacerSonido() {
