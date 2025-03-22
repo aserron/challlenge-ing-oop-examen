@@ -1,4 +1,4 @@
-package  com.pruebas.singleton;
+package  com.examen.singleton;
 
 public class JuegoMain {
     public static void main(String[] args) {

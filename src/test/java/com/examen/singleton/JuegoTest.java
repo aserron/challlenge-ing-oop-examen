@@ -18,22 +18,23 @@ public class JuegoTest {
     @Test
     public void testGameStateFlow() {
         Juego juego = Juego.getInstance();
-        
+
+
         // Test initial state
-        assertEquals(ESTADOS.ESPERANDO, juego.getEstado(), "El estado inicial debería ser ESPERANDO");
+        assertEquals(EstadosJuegos.ESPERANDO, juego.getEstado(), "El estado inicial debería ser ESPERANDO: " + juego.getEstado());
         
         // Test game flow
         juego.iniciarJuego();
-        assertEquals(ESTADOS.INICIADO, juego.getEstado(), "El estado debería ser INICIADO");
+        assertEquals(EstadosJuegos.INICIADO, juego.getEstado(), "El estado debería ser INICIADO");
         
         juego.pausarJuego();
-        assertEquals(ESTADOS.PAUSADO, juego.getEstado(), "El estado debería ser PAUSADO");
+        assertEquals(EstadosJuegos.PAUSADO, juego.getEstado(), "El estado debería ser PAUSADO");
         
         juego.reanudarJuego();
-        assertEquals(ESTADOS.CORRIENDO, juego.getEstado(), "El estado debería ser CORRIENDO");
+        assertEquals(EstadosJuegos.CORRIENDO, juego.getEstado(), "El estado debería ser CORRIENDO");
         
         juego.finalizarJuego();
-        assertEquals(ESTADOS.FINALIZADO, juego.getEstado(), "El estado debería ser FINALIZADO");
+        assertEquals(EstadosJuegos.FINALIZADO, juego.getEstado(), "El estado debería ser FINALIZADO");
         
         // Clean up for next test
         juego.limpiarEstado();
