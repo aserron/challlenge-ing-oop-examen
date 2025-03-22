@@ -1,4 +1,4 @@
-package com.pruebas.animales;
+package com.examen.animales;
 
 
 import org.junit.jupiter.api.Test;

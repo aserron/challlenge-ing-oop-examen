@@ -1,9 +1,5 @@
-package com.pruebas.bookstore;
+package com.examen.bookstore;
 
-import com.pruebas.bookstore.Biblioteca;
-import com.pruebas.bookstore.Libro;
-import com.pruebas.bookstore.NoDisponibleLibroException;
-import com.pruebas.bookstore.NoExisteLibreException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package com.pruebas.personas;
+package com.examen.personas;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

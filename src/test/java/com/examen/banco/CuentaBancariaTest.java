@@ -1,4 +1,4 @@
-package com.pruebas.banco;
+package com.examen.banco;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

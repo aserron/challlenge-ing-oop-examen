@@ -1,4 +1,4 @@
-package com.pruebas.singleton;
+package com.examen.singleton;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

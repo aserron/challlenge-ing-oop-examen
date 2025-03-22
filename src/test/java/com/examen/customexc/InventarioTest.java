@@ -1,4 +1,4 @@
-package  com.pruebas.customexc;
+package  com.examen.customexc;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
