@@ -17,43 +17,38 @@ class CuentaBancariaTest {
         cuentaAhorros = new CuentaAhorros(NUMERO_CUENTA, TITULAR);
     }
 
+
     @Test
-    void testOperacionesBasicas() {
+    void testCuentaCuentaCorrienteBasicas() {
+
+        assertEquals(0.0, cuentaCorriente.getSaldo());
+
         // Prueba de depósito
         cuentaCorriente.depositar(500.0);
         assertEquals(500.0, cuentaCorriente.getSaldo());
 
+
+        // Prueba de retiro normal
+        assertEquals(200, cuentaCorriente.retirar(200.0));
+        assertEquals(300.0, cuentaCorriente.getSaldo());
+
+
+        // Prueba de retiro con monto mayor al saldo en cuenta de ahorros
+        assertEquals(500.0, cuentaCorriente.retirar(500.0));
+
+        // El saldo es negativo = -(sobregiro + la comisión)
+        assertEquals(-210.0, cuentaCorriente.getSaldo());
+    }
+
+    @Test
+    void testCuentaCuentaAhorroBasicas() {
+        // Prueba de depósito
         cuentaAhorros.depositar(500.0);
         assertEquals(500.0, cuentaAhorros.getSaldo());
 
         // Prueba de retiro normal
-        assertThrows(IllegalArgumentException.class, () -> cuentaCorriente.retirar(200.0));
-        assertEquals(300.0, cuentaCorriente.getSaldo());
-
-        assertThrows(IllegalArgumentException.class, () -> cuentaAhorros.retirar(200.0));
+        assertEquals(200, cuentaAhorros.retirar(200.0));
         assertEquals(300.0, cuentaAhorros.getSaldo());
-
-        // Prueba de retiro con monto mayor al saldo en cuenta de ahorros
-        assertThrows(IllegalArgumentException.class, () -> cuentaAhorros.retirar(500.0));
-        assertEquals(300.0, cuentaAhorros.getSaldo());
-    }
-
-    @Test
-    void testSobregiroEnCuentaCorriente() {
-        // Depositar fondos iniciales
-        cuentaCorriente.depositar(500.0);
-        assertEquals(500.0, cuentaCorriente.getSaldo());
-
-
-        double SOBREGIRO = 1000.0;
-        
-        // Realizar retiro con sobregiro
-        assertThrows(IllegalArgumentException.class, () -> cuentaCorriente.retirar(SOBREGIRO));
-        
-        // Verificar que se aplicó el sobregiro y la comisión
-        double sobregiro = 1000.0 - 500.0; // = 500.0
-        double comision = sobregiro * 0.05; // = 25.0
-        assertEquals(-sobregiro - comision, cuentaCorriente.getSaldo()); // -500 - 25
     }
 
     @Test

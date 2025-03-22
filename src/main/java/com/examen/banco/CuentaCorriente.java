@@ -4,7 +4,7 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package com.pruebas.banco;
+package com.examen.banco;
 
 public class CuentaCorriente extends CuentaBancaria {
     private double limiteSobregiro;
@@ -32,7 +32,7 @@ public class CuentaCorriente extends CuentaBancaria {
             System.out.println("Nuevo saldo: $" + saldo);
             return monto;
         }
-        throw new IllegalArgumentException("Monto inválido: No es posible procesar el monto. monto=" + monto + " saldo=" + saldo);
+        throw new IllegalArgumentException("SALDO INSUFICIENTE: El monto supera el saldo y el sobregiro. monto=" + monto + " saldo=" + saldo);
     }
 
     @Override

@@ -23,4 +23,4 @@
  *   <li>Los montos no pueden ser negativos</li>
  * </ul>
  */
-package com.pruebas.banco; 
+package com.examen.banco;

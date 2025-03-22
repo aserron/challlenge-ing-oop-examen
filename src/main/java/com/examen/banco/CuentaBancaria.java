@@ -4,7 +4,7 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package com.pruebas.banco;
+package com.examen.banco;
 
 public abstract class CuentaBancaria {
     // Atributos protegidos para que las subclases puedan acceder
@@ -29,16 +29,11 @@ public abstract class CuentaBancaria {
 
     // Método para retirar dinero
     public double retirar(double monto) {
-        
-        if(monto <= saldo) {
-            throw new IllegalArgumentException("Monto invalido: El monto excede su saldo actual. monto=" + monto + " saldo=" + saldo);
-        }
 
         if(monto <= 0) {            
             throw new IllegalArgumentException("Monto inválido: El monto debe ser mayor que 0  monto=" + monto);            
         }
 
-        
         saldo -= monto;
         System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
         

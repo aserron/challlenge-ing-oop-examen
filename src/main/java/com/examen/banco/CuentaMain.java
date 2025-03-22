@@ -1,4 +1,4 @@
-package  com.pruebas.banco;
+package  com.examen.banco;
 
 public class CuentaMain {
     public static void main(String[] args) {
@@ -13,8 +13,9 @@ public class CuentaMain {
 
         // Cuenta Corriente
         CuentaCorriente cuentaCorriente = new CuentaCorriente("1234567890", "Juan Perez", 1000);
+        System.out.println("Creando cuenta corriente:" + cuentaCorriente.getNumeroCuenta());
         cuentaCorriente.depositar(1000);
-        cuentaCorriente.retirar(500);
+        cuentaCorriente.retirar(1500);
         cuentaCorriente.calcularInteres();      
     }
 }

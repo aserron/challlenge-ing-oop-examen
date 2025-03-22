@@ -4,9 +4,10 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package  com.pruebas.banco;
+package  com.examen.banco;
 
 public class CuentaAhorros extends CuentaBancaria {
+
     // Constante para la tasa de interés
     private static final double TASA_INTERES = 0.02; // 2% de interés anual
 
@@ -15,7 +16,15 @@ public class CuentaAhorros extends CuentaBancaria {
         super(numeroCuenta, titular);
     }
 
-    // Sobreescritura del método calcularInteres
+
+    @Override
+    public double retirar(double monto) {
+        if(monto > saldo) {
+            throw new IllegalArgumentException("Monto invalido: El monto excede su saldo actual. monto=" + monto + " saldo=" + saldo);
+        }
+        return super.retirar(monto);
+    }
+
     @Override
     public void calcularInteres() {
         double interes = saldo * TASA_INTERES;
