@@ -1,4 +1,4 @@
-package  com.pruebas.gestion;
+package  com.examen.gestion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
