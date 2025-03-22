@@ -1,7 +1,7 @@
 package com.examen.singleton;
 
 public enum EstadosJuegos {
-    ESPERANDO,
+    READY,
     INICIADO,
     CORRIENDO,
     PAUSADO,

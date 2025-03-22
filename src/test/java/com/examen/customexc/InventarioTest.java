@@ -58,7 +58,7 @@ class InventarioTest {
 
     @Test
     void testProductoNoEncontradoException() {
-        ProductoNoEncontradoException exception = new ProductoNoEncontradoException("Test message");
+        ProductoNoEncontradoException exception = new ProductoNoEncontradoException(0);
         assertEquals("Test message", exception.getMessage());
     }
 

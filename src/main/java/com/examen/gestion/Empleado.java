@@ -1,4 +1,4 @@
-package  com.pruebas.gestion;
+package  com.examen.gestion;
 
 public class Empleado {
     private String nombre;
@@ -35,10 +35,11 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "main.com.gestion.prueba.Empleado{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", salario=" + salario +
-                '}';
+        return String.format(
+            "Empleado{id=%d, nombre='%s', salario=%.2f}", 
+            id, nombre, salario
+            );
     }
 }
+
+

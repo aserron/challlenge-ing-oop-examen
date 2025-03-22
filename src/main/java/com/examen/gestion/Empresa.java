@@ -1,4 +1,4 @@
-package  com.pruebas.gestion;
+package  com.examen.gestion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,5 +29,9 @@ public class Empresa {
     // Método adicional para obtener la lista de empleados
     public List<Empleado> getEmpleados() {
         return new ArrayList<>(empleados);
+    }
+
+    public void imprimirListaEmpleados() {
+        
     }
 }

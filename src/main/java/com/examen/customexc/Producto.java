@@ -1,4 +1,4 @@
-package  com.pruebas.customexc;
+package  com.examen.customexc;
 
 public class Producto {
     private int id;

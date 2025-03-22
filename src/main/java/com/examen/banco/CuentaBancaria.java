@@ -53,6 +53,8 @@ public abstract class CuentaBancaria {
         return titular;
     }
 
-    // Método abstracto para calcular intereses
+    /**
+     * @abstract: Método abstracto para calcular intereses
+     */
     public abstract void calcularInteres();
 } 

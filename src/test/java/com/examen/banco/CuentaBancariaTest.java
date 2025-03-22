@@ -1,5 +1,6 @@
 package com.examen.banco;
 
+import com.examen.banco.exceptions.CuentaSobregiradaException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,6 +39,8 @@ class CuentaBancariaTest {
 
         // El saldo es negativo = -(sobregiro + la comisión)
         assertEquals(-210.0, cuentaCorriente.getSaldo());
+
+        assertThrows(CuentaSobregiradaException.class, () -> cuentaCorriente.retirar(1500.0));
     }
 
     @Test

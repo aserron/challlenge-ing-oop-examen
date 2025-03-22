@@ -18,14 +18,14 @@ class GestionTest {
     }
 
     @Test
-    void testCreacionEmpleado() {
+    void testCreacionEmpleado1() {
         assertEquals("Juan Pérez", empleado1.getNombre());
         assertEquals(1, empleado1.getId());
         assertEquals(30000.0, empleado1.getSalario());
     }
 
     @Test
-    void testModificacionEmpleado() {
+    void testModificacionEmpleado1() {
         empleado1.setNombre("Juan Pablo Pérez");
         empleado1.setSalario(32000.0);
 
@@ -34,7 +34,7 @@ class GestionTest {
     }
 
     @Test
-    void testAgregarEmpleado() {
+    void testAgregarEmpleado1() {
         empresa.agregarEmpleado(empleado1);
 
         assertFalse(empresa.getEmpleados().isEmpty());
@@ -58,6 +58,12 @@ class GestionTest {
     }
 
     @Test
+    void testImprimirLista() {
+        assertTrue(empresa.getEmpleados().isEmpty());
+        // empresa.imprimirListaEmpleados();
+    }
+
+    @Test
     void testToString() {
         String expectedString = "main.com.gestion.prueba.Empleado{id=1, nombre='Juan Pérez', salario=30000.0}";
         assertEquals(expectedString, empleado1.toString());
@@ -67,6 +73,8 @@ class GestionTest {
     void testEmpleadoInmutable() {
         Empleado empleado = new Empleado("Test", 1, 1000.0);
         assertEquals(1, empleado.getId()); // ID should not be modifiable
+
+
     }
 
     @Test

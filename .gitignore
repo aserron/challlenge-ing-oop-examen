@@ -42,7 +42,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-src/main/java/com/pruebas/banco/CuentaBancaria.java
+src/main/java/com/examen/banco/CuentaBancaria.java
 src/main/java/com/zoo/Humano.java
 
 /temp/

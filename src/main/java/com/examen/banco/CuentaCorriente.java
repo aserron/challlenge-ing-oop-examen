@@ -6,6 +6,8 @@
  */
 package com.examen.banco;
 
+import com.examen.banco.exceptions.CuentaSobregiradaException;
+
 public class CuentaCorriente extends CuentaBancaria {
     private double limiteSobregiro;
     private static final double COMISION_SOBREGIRO = 0.05; // 5% de comisión
@@ -16,7 +18,7 @@ public class CuentaCorriente extends CuentaBancaria {
     }
 
     @Override
-    public double retirar(double monto) {
+    public double retirar(double monto) throws CuentaSobregiradaException {
 
         if (monto <= 0) {
             throw new IllegalArgumentException("Monto inválido: El monto debe ser mayor que 0  monto=" + monto);
@@ -32,7 +34,7 @@ public class CuentaCorriente extends CuentaBancaria {
             System.out.println("Nuevo saldo: $" + saldo);
             return monto;
         }
-        throw new IllegalArgumentException("SALDO INSUFICIENTE: El monto supera el saldo y el sobregiro. monto=" + monto + " saldo=" + saldo);
+        throw new CuentaSobregiradaException("SALDO INSUFICIENTE: El monto supera el saldo y el sobregiro. monto=" + monto + " saldo=" + saldo);
     }
 
     @Override

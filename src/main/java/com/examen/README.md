@@ -6,13 +6,7 @@
 [./prueba/Persona.java](banco/CuentaMain.java) 
 
 
-## #14. Sobrecarga en Calculadora
 
-Crea una clase Calculadora que contenga varios métodos sumar sobrecargados:
-
-1. Uno que sume dos enteros,
-2. Otro que sume tres enteros,
-3. Y uno que sume dos números de punto flotante.
   
 #### Solution : [Calculadora](./calc/Calculadora.java)
 
@@ -86,5 +80,5 @@ Crea una clase Calculadora que contenga varios métodos sumar sobrecargados:
 Solution.
 demo    : InventarioMain
 test    :
-carpeta : src\main\java\com\pruebas\exceptions
-package :  com.pruebas.exceptions
+carpeta : src\main\java\com\examen\exceptions
+package :  com.examen.exceptions

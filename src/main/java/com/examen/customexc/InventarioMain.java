@@ -1,4 +1,4 @@
-package  com.pruebas.customexc;
+package  com.examen.customexc;
 
 public class InventarioMain {
     public static void main(String[] args) {

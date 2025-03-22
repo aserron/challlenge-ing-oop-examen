@@ -1,4 +1,4 @@
-package  com.pruebas.customexc;
+package com.examen.customexc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,24 +19,24 @@ public class Inventario {
                 .filter(p -> p.getId() == id)
                 .findFirst()
                 .orElseThrow(() -> new ProductoNoEncontradoException(
-                    "No se encontró el producto con ID: " + id));
+                        0));
     }
 
+    /**
+     * @param id
+     * @return Producto
+     * @throws ProductoNoEncontradoException
+     */
     public Producto buscarProductoPorId(int id) throws ProductoNoEncontradoException {
-        try {
-            for (Producto producto : productos) {
-                if (producto.getId() == id) {
-                    return producto;
-                }
+        for (Producto producto : productos) {
+            if (producto.getId() == id) {
+                return producto;
             }
-            throw new ProductoNoEncontradoException("No se encontró el producto con ID: " + id);
-        } catch (ProductoNoEncontradoException e) {
-            System.err.println("Error al buscar producto: " + e.getMessage());
-            throw e;
         }
+        throw new ProductoNoEncontradoException(id);
     }
 
     public List<Producto> listarProductos() {
         return new ArrayList<>(productos);
     }
-} 
+}

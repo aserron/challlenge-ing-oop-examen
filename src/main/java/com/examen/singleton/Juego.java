@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Juego {
 
-    // Public static method to get the instance
+    // singleton pattern implementation
     public static Juego getInstance() {
         if (instance == null) {
             instance = new Juego();
@@ -12,87 +12,83 @@ public class Juego {
         return instance;
     }
 
+    /**
+     * Asegura que la instancia se cree si la clase se invoca directamente.
+     */
+    public static void main(String[] args) {
+        // Obtener primera instancia
+        Juego juego1 = Juego.getInstance();
+        
+        // Obtener segunda instancia
+        Juego juego2 = Juego.getInstance();
+        assert juego1 == juego2 : "Las instancias deben ser iguales";
+        
+        // Demostrar que son la misma instancia
+        System.out.println("¿Son la misma instancia? " + (juego1 == juego2));
+    }
+    
+
     private EstadosJuegos estado;
 
     /**
      * bitácora de actividad, ciclo de vida, eventos notables
      */
-    private final ArrayList<String> updateStatusMsgs = new ArrayList<>();
+    private final ArrayList<String> activityMessages = new ArrayList<>();
     private static Juego instance;
 
     // Private constructor to prevent instantiation
     private Juego() {
-        this.estado = EstadosJuegos.ESPERANDO;
-        this.updateStatusMsgs.add("Juego esperando a que el usuario inicie el juego");
+        this.estado = EstadosJuegos.READY;
+        this.activityMessages.add("Juego esperando el inicio del juego.");
     }
-
-
-    /**
-     * @implNote REQUERIDO #2: El juego debe estar en estado ESPERANDO para poder ser iniciado
-     */
-    public static void main(String[] args) {
-        // Obtener primera instancia
-        Juego juego1 = Juego.getInstance();
-        System.out.println("Primera instancia creada: " + juego1);
-        
-        // Obtener segunda instancia
-        Juego juego2 = Juego.getInstance();
-        System.out.println("Segunda instancia creada: " + juego2);
-        
-        // Demostrar que son la misma instancia
-        System.out.println("¿Son la misma instancia? " + (juego1 == juego2));
-    }
+    
 
     /**
      * @implNote REQUERIDO: 1) El juego debe estar en estado ESPERANDO para poder ser iniciado
      */
-    public void iniciarJuego() {
-        updateStatus(EstadosJuegos.INICIADO);
+    public void iniciarJuego() {        
+        
+        if (estado != EstadosJuegos.READY) {
+            throw new IllegalStateException("El juego no puede ser iniciado en este estado");
+        }
+        setEstado(EstadosJuegos.INICIADO);
         System.out.println("El juego ha comenzado!");
     }
-
     public void pausarJuego() {
-        updateStatus(EstadosJuegos.PAUSADO);
+        setEstado(EstadosJuegos.PAUSADO);
         System.out.println("El juego ha sido pausado!");
     }
-
     public void reanudarJuego() {
-        updateStatus(EstadosJuegos.CORRIENDO);
+        setEstado(EstadosJuegos.CORRIENDO);
         System.out.println("El juego ha sido reanudado!");
     }
-
     public void finalizarJuego() {
-        updateStatus(EstadosJuegos.FINALIZADO);
+        setEstado(EstadosJuegos.FINALIZADO);
         System.out.println("El juego ha sido finalizado!");
-    }
-
-    private void updateStatus(EstadosJuegos nuevoEstado) {
-        estado = nuevoEstado;
-        updateStatusMsgs.add("El juego ha comenzado!");
-    }
-
-    public void info() {
-        System.out.println("Estado actual del juego: " + estado);
-        System.out.println("Información sobre el ciclo de vida del juego:");
-
-
-        // imprimir uno por lina
-        System.out.println("actividad: ...");
-        for (String msg : updateStatusMsgs) {
-            System.out.println("> " +msg);
-        }        
     }
 
     public EstadosJuegos getEstado() {
         return estado;
     }
-
-    public ArrayList<String> getUpdateStatusMsgs() {
-        return updateStatusMsgs;
+    private void setEstado(EstadosJuegos nuevoEstado) {
+        estado = nuevoEstado;
+        activityMessages.add("El juego ha comenzado!");
     }
 
-    // cleanup fn
+    public void info() {
+        System.out.println("Estado actual del juego: " + estado);        
+        System.out.println("actividad: ...");
+        for (String msg : activityMessages) {
+            System.out.println("> " +msg);
+        }        
+    }
+
+    public ArrayList<String> getActivity() {
+        return activityMessages;
+    }
+
     public void limpiarEstado() {
-        updateStatusMsgs.clear();
+        this.activityMessages.clear();
+        this.setEstado(EstadosJuegos.READY);
     }
 }

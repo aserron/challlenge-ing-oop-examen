@@ -21,7 +21,7 @@ public class JuegoTest {
 
 
         // Test initial state
-        assertEquals(EstadosJuegos.ESPERANDO, juego.getEstado(), "El estado inicial debería ser ESPERANDO: " + juego.getEstado());
+        assertEquals(EstadosJuegos.READY, juego.getEstado(), "El estado inicial debería ser ESPERANDO: " + juego.getEstado());
         
         // Test game flow
         juego.iniciarJuego();
@@ -45,12 +45,12 @@ public class JuegoTest {
         Juego juego = Juego.getInstance();
         
         // Test initial message
-        assertTrue(juego.getUpdateStatusMsgs().contains("Juego esperando a que el usuario inicie el juego"), 
+        assertTrue(juego.getActivity().contains("Juego esperando a que el usuario inicie el juego"), 
             "Debería contener el mensaje inicial");
         
         // Test message after starting
         juego.iniciarJuego();
-        assertTrue(juego.getUpdateStatusMsgs().contains("El juego ha comenzado!"), 
+        assertTrue(juego.getActivity().contains("El juego ha comenzado!"), 
             "Debería contener el mensaje de inicio");
         
         // Clean up
