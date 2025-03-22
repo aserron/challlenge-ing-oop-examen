@@ -28,6 +28,6 @@ public class InventarioMain {
 
         // Listar todos los productos
         System.out.println("\nLista de todos los productos:");
-        inventario.listarProductos().forEach(System.out::println);
+        inventario.listarProductos();
     }
 } 

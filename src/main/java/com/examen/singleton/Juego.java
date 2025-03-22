@@ -2,7 +2,7 @@ package com.examen.singleton;
 
 import java.util.ArrayList;
 
-public class Juego {
+public final class Juego {
 
     // singleton pattern implementation
     public static Juego getInstance() {
@@ -21,10 +21,12 @@ public class Juego {
         
         // Obtener segunda instancia
         Juego juego2 = Juego.getInstance();
-        assert juego1 == juego2 : "Las instancias deben ser iguales";
+
+        boolean isSame = juego1 == juego2;
+        assert isSame : "Las instancias deben ser iguales";
         
         // Demostrar que son la misma instancia
-        System.out.println("¿Son la misma instancia? " + (juego1 == juego2));
+        System.out.println("¿Son la misma instancia? juego1 == juego2 ="+ isSame);
     }
     
 

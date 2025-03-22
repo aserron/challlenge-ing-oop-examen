@@ -36,7 +36,11 @@ public class Inventario {
         throw new ProductoNoEncontradoException(id);
     }
 
-    public List<Producto> listarProductos() {
+    public void listarProductos() {
+        getProductos().forEach(p -> System.out.println(p));
+    }
+
+    public List<Producto> getProductos() {
         return new ArrayList<>(productos);
     }
 }

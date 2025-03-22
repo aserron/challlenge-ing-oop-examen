@@ -24,19 +24,21 @@ This feature implements a polymorphic animal sound system using Java's object-or
 
 ### Basic Usage
 ```java
-Animal perro = new Perro();
-Animal gato = new Gato();
-
-AnimalSoundEnum sonidoPerro = perro.hacerSonido();
-AnimalSoundEnum sonidoGato = gato.hacerSonido();
+   Animal perro = new Perro();
+   Animal gato = new Gato();
+   
+   AnimalSoundEnum sonidoPerro = perro.hacerSonido();
+   AnimalSoundEnum sonidoGato = gato.hacerSonido();
 ```
 
 ### Polymorphic Usage
 ```java
-Animal[] animales = {new Perro(), new Gato(), new Perro()};
-for (Animal animal : animales) {
-    System.out.println("Un animal hace: " + animal.hacerSonido().getSound());
-}
+
+   package com.examen.animales;
+   Animal[] animales = {new Perro(), new Gato(), new Perro()};   
+   for (Animal animal : animales) {
+       System.out.println("Un animal hace: " + animal.hacerSonido().getSound());
+   }
 ```
 
 ## Testing

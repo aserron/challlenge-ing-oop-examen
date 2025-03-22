@@ -1,4 +1,4 @@
-package  com.examen.gestion;
+package com.examen.gestion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,11 @@ public class Empresa {
         this.empleados = new ArrayList<>();
     }
 
+    // Método adicional para obtener la lista de empleados
+    public List<Empleado> getEmpleados() {
+        return new ArrayList<>(empleados);
+    }
+
     public void agregarEmpleado(Empleado empleado) {
         empleados.add(empleado);
     }
@@ -19,19 +24,12 @@ public class Empresa {
             System.out.println("No hay empleados registrados.");
             return;
         }
-        
+
         System.out.println("Lista de empleados:");
         for (Empleado empleado : empleados) {
             System.out.println(empleado);
         }
     }
 
-    // Método adicional para obtener la lista de empleados
-    public List<Empleado> getEmpleados() {
-        return new ArrayList<>(empleados);
-    }
 
-    public void imprimirListaEmpleados() {
-        
-    }
 }
