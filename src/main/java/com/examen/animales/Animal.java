@@ -1,4 +1,4 @@
-package  com.pruebas.animales;
+package  com.examen.animales;
 
 public abstract class Animal {
     /**

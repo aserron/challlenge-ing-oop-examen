@@ -4,7 +4,7 @@
  * @version: 1.0
  * @since: 2025-03-21
  */
-package  com.pruebas.animales;
+package  com.examen.animales;
 
 public class Gato extends Animal {
     /**
