@@ -1,4 +1,4 @@
-package  com.pruebas.personas;
+package  com.examen.personas;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,10 +1,9 @@
-package com.pruebas.personas;
+package com.examen.personas;
 
 public class Persona {
     private String nombre;
     private int edad;
-    
-    public Persona(String nombre, int edad) {
+    public Persona( String nombre, int edad) {
         if (nombre == null || nombre.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
         }
