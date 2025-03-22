@@ -1,4 +1,4 @@
-package com.pruebas.bookstore;
+package com.examen.bookstore;
 
 public class NoDisponibleLibroException extends Exception {
     public NoDisponibleLibroException(String message) {

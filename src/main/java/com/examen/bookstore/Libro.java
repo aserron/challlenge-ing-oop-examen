@@ -1,4 +1,4 @@
-package com.pruebas.bookstore;
+package com.examen.bookstore;
 
 public class Libro {
     private String titulo;

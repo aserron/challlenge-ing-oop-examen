@@ -1,4 +1,4 @@
-package com.pruebas.bookstore;
+package com.examen.bookstore;
 
 import java.util.ArrayList;
 import java.util.List;
