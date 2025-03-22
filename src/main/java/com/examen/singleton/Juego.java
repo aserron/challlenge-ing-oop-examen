@@ -26,7 +26,7 @@ public final class Juego {
         assert isSame : "Las instancias deben ser iguales";
         
         // Demostrar que son la misma instancia
-        System.out.println("¿Son la misma instancia? juego1 == juego2 ="+ isSame);
+        System.out.println("¿Son la misma instancia? Juego1 == juego2 ="+ isSame);
     }
     
 
@@ -54,15 +54,15 @@ public final class Juego {
             throw new IllegalStateException("El juego no puede ser iniciado en este estado");
         }
         setEstado(EstadosJuegos.INICIADO);
-        System.out.println("El juego ha comenzado!");
+        System.out.println("¡El juego ha comenzado!");
     }
     public void pausarJuego() {
         setEstado(EstadosJuegos.PAUSADO);
-        System.out.println("El juego ha sido pausado!");
+        System.out.println("¡El juego ha sido pausado!");
     }
     public void reanudarJuego() {
         setEstado(EstadosJuegos.CORRIENDO);
-        System.out.println("El juego ha sido reanudado!");
+        System.out.println("¡El juego ha sido reanudado!");
     }
     public void finalizarJuego() {
         setEstado(EstadosJuegos.FINALIZADO);
@@ -74,7 +74,7 @@ public final class Juego {
     }
     private void setEstado(EstadosJuegos nuevoEstado) {
         estado = nuevoEstado;
-        activityMessages.add("El juego ha comenzado!");
+        activityMessages.add("¡El juego ha comenzado!");
     }
 
     public void info() {

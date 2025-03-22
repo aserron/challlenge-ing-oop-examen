@@ -7,10 +7,10 @@ Este repositorio contiene una colección de soluciones para problemas de Program
 
 
 ### 💻 Implementaciones
-- [Soluciones Practicas (main.java.com.examen)](src/main/java/com/examen/)
+- [Soluciones Practicas (main.java.com.examen)](src/main/java/com/examen)
 
 ### 🧪 Pruebas
-- [Pruebas Unitarias (main.test.com.examen)](src/test/java/com/examen/)
+- [Pruebas Unitarias (main.test.com.examen)](src/test/java/com/examen)
 
 ### 📚 Soluciones Teorícas
 - [Examen Teórico](docs/README.md)
@@ -262,15 +262,18 @@ void testMostrarInfo() {
 
 ## Ejemplo de Uso
 ```java
-// Crear instancias
-Vehiculo vehiculo = new Vehiculo("Toyota", "Corolla");
-Coche coche = new Coche("Honda", "Civic", 4, "Gasolina");
-Moto moto = new Moto("Honda", "CBR", 600, true);
 
-// Mostrar información
-vehiculo.mostrarInfo();
-coche.mostrarInfo();
-moto.mostrarInfo();
+  package com.examen.vehiculos;
+  
+  // Crear instancias
+  Vehiculo vehiculo = new Vehiculo("Toyota", "Corolla");
+  Coche coche = new Coche("Honda", "Civic", 4, "Gasolina");
+  Moto moto = new Moto("Honda", "CBR", 600, true);
+    
+  // Mostrar información
+  vehiculo.mostrarInfo();
+  coche.mostrarInfo();
+  moto.mostrarInfo();
 ```
 
 ## Salida Esperada

@@ -23,9 +23,7 @@ public class Inventario {
     }
 
     /**
-     * @param id
      * @return Producto
-     * @throws ProductoNoEncontradoException
      */
     public Producto buscarProductoPorId(int id) throws ProductoNoEncontradoException {
         for (Producto producto : productos) {

@@ -1,6 +1,6 @@
 package  com.examen.customexc;
 
-public class InventarioMain {
+public final class InventarioMain {
     public static void main(String[] args) {
         // Crear un inventario
         Inventario inventario = new Inventario();

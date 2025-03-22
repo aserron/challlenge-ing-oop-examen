@@ -1,6 +1,6 @@
 /**
  * Jerarquía de Cuentas Bancarias
- *
+ * <p>
  * Este paquete implementa una jerarquía de clases para representar una cuenta bancaria.
  * La estructura incluye:
  * <ul>
