@@ -61,7 +61,7 @@ class InventarioTest {
     @Test
     void testProductoNoEncontradoException() {
         ProductoNoEncontradoException exception = new ProductoNoEncontradoException(0);
-        assertEquals("Test message", exception.getMessage());
+        assertEquals("No se encontró el producto con ID: 0", exception.getMessage());
     }
 
     @Test

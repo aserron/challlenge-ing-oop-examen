@@ -37,7 +37,7 @@ public final class Juego {
     // Private constructor to prevent instantiation
     private Juego() {
         this.estado = EstadosJuegos.READY;
-        this.activityMessages.add("Juego esperando el inicio del juego.");
+        this.activityMessages.add("Juego esperando a que el usuario inicie el juego");
     }
 
     /**
@@ -50,6 +50,7 @@ public final class Juego {
             throw new IllegalStateException("El juego no puede ser iniciado en este estado");
         }
         setEstado(EstadosJuegos.INICIADO);
+
         System.out.println("El juego ha comenzado!");
     }
 

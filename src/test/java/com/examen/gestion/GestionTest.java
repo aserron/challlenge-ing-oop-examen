@@ -65,7 +65,7 @@ class GestionTest {
 
     @Test
     void testToString() {
-        String expectedString = "main.com.gestion.prueba.Empleado{id=1, nombre='Juan Pérez', salario=30000.0}";
+        String expectedString = "Empleado{id=1, nombre='Juan Pérez', salario=30000.00}";
         assertEquals(expectedString, empleado1.toString());
     }
 

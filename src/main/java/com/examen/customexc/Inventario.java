@@ -18,8 +18,7 @@ public class Inventario {
         return productos.stream()
                 .filter(p -> p.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new ProductoNoEncontradoException(
-                        0));
+                .orElseThrow(() -> new ProductoNoEncontradoException(id));
     }
 
     /**
