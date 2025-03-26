@@ -3,6 +3,8 @@ package  com.examen.customexc;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class InventarioTest {
@@ -49,8 +51,8 @@ class InventarioTest {
     }
 
     @Test
-    void testListarProductos() {
-        var productos = inventario.listarProductos();
+    void testGetProductos() {
+        List<Producto> productos = inventario.getProductos();
         assertEquals(2, productos.size());
         assertTrue(productos.contains(laptop));
         assertTrue(productos.contains(smartphone));

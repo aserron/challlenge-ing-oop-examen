@@ -1,12 +1,6 @@
 package com.examen.overloadcal;
 
-/**
- * @description: Script de ejemplo que muestra cómo crear un programa Java sin una clase
- * @author: Andres Serron
- * @version: 1.0
- * @since: 2025-03-21
- */
-public class CalculadoraScript {
+public final class CalculadoraScript {
     public static void main(String[] args) {
         // Crear una instancia de OverCalculadora
         OverCalculadora calc = new OverCalculadora();

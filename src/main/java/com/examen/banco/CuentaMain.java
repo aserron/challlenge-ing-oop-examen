@@ -1,6 +1,6 @@
 package  com.examen.banco;
 
-public class CuentaMain {
+public final class CuentaMain {
     public static void main(String[] args) {
         CuentaAhorros cuentaAhorros = new CuentaAhorros("1234567890", "Juan Perez");
         cuentaAhorros.depositar(1000);

@@ -39,9 +39,7 @@ public class BibliotecaTest {
 
     @Test
     void testPrestarLibroNoExistente() {
-        NoExisteLibreException exception = assertThrows(NoExisteLibreException.class, () -> {
-            biblioteca.prestarLibro("Libro que no existe");
-        });
+        NoExisteLibreException exception = assertThrows(NoExisteLibreException.class, () -> biblioteca.prestarLibro("Libro que no existe"));
         assertEquals("El libro 'Libro que no existe' no existe en la biblioteca.", exception.getMessage());
     }
 
@@ -51,9 +49,7 @@ public class BibliotecaTest {
         biblioteca.prestarLibro("Don Quijote");
         
         // Intentamos prestarlo de nuevo
-        NoDisponibleLibroException exception = assertThrows(NoDisponibleLibroException.class, () -> {
-            biblioteca.prestarLibro("Don Quijote");
-        });
+        NoDisponibleLibroException exception = assertThrows(NoDisponibleLibroException.class, () -> biblioteca.prestarLibro("Don Quijote"));
         assertEquals("El libro 'Don Quijote' no está disponible para préstamo.", exception.getMessage());
     }
 
@@ -82,9 +78,7 @@ public class BibliotecaTest {
 
     @Test
     void testDevolverLibroNoExistente() {
-        NoExisteLibreException exception = assertThrows(NoExisteLibreException.class, () -> {
-            biblioteca.devolverLibro("Libro que no existe");
-        });
+        NoExisteLibreException exception = assertThrows(NoExisteLibreException.class, () -> biblioteca.devolverLibro("Libro que no existe"));
         assertEquals("El libro 'Libro que no existe' no existe en la biblioteca.", exception.getMessage());
     }
 

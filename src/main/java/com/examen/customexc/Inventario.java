@@ -35,7 +35,7 @@ public class Inventario {
     }
 
     public void listarProductos() {
-        getProductos().forEach(p -> System.out.println(p));
+        getProductos().forEach(System.out::println);
     }
 
     public List<Producto> getProductos() {

@@ -6,7 +6,7 @@
  */
 package  com.examen.animales;
 
-class AnimalesCheck {
+final class AnimalesCheck {
     public static void main(String[] args) {
         // Crear instancias de Perro y Gato
         Animal perro = new Perro();

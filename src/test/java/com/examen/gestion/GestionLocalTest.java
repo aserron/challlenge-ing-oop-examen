@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GestionTestLocal {
+public class GestionLocalTest {
     private Empresa empresa;
     private Empleado empleado1;
     private Empleado Empleado;

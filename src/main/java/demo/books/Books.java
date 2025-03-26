@@ -72,7 +72,7 @@ public class Books {
         public Libro prestarLibro(String titulo)
                 throws NoDisponibleLibroException,
                 NoExisteLibreException {
-            Libro libroEncontrado = null;
+            Libro libroEncontrado;
 
             // Buscar el libro por título
             libroEncontrado = buscarLibrePorTitulo(titulo);

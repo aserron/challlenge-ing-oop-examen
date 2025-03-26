@@ -13,25 +13,19 @@ class PersonaTest {
 
     @Test
     void testConstructorWithNullName() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            new Persona(null, 30);
-        });
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Persona(null, 30));
         assertEquals("El nombre no puede ser nulo o vacío", exception.getMessage());
     }
 
     @Test
     void testConstructorWithEmptyName() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            new Persona("", 30);
-        });
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Persona("", 30));
         assertEquals("El nombre no puede ser nulo o vacío", exception.getMessage());
     }
 
     @Test
     void testConstructorWithWhitespaceName() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            new Persona("   ", 30);
-        });
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Persona("   ", 30));
         assertEquals("El nombre no puede ser nulo o vacío", exception.getMessage());
     }
 
@@ -45,18 +39,14 @@ class PersonaTest {
     @Test
     void testSetNombreWithNull() {
         Persona persona = new Persona("Juan", 25);
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            persona.setNombre(null);
-        });
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> persona.setNombre(null));
         assertEquals("El nombre no puede ser nulo o vacío", exception.getMessage());
     }
 
     @Test
     void testSetNombreWithEmpty() {
         Persona persona = new Persona("Juan", 25);
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            persona.setNombre("");
-        });
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> persona.setNombre(""));
         assertEquals("El nombre no puede ser nulo o vacío", exception.getMessage());
     }
 

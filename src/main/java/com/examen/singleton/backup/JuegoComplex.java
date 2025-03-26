@@ -1,9 +1,11 @@
 package com.examen.singleton.backup;
 
+import java.io.Serial;
 import java.io.Serializable;
 
-public class JuegoComplex implements Serializable {
+public final class JuegoComplex implements Serializable {
     private static volatile JuegoComplex instance;
+    @Serial
     private static final long serialVersionUID = 1L;
     
     // Game state
@@ -43,6 +45,7 @@ public class JuegoComplex implements Serializable {
     }
     
     // Handle serialization
+    @Serial
     protected Object readResolve() {
         return getInstance();
     }

@@ -22,9 +22,7 @@ public class BooksDemo {
             // nunca se va a ejecutar
             System.out.println("Libro prestado: " + libroNoExiste2.getTitulo());
 
-        } catch (Books.NoExisteLibreException e) {
-            System.out.println("Error: " + e.getMessage());
-        } catch (Books.NoDisponibleLibroException e) {
+        } catch (Books.NoExisteLibreException | Books.NoDisponibleLibroException e) {
             System.out.println("Error: " + e.getMessage());
         }
 

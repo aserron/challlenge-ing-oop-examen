@@ -54,7 +54,7 @@ public abstract class CuentaBancaria {
     }
 
     /**
-     * @abstract: Método abstracto para calcular intereses
+     * Abstract methods allow particular interes calculation.
      */
     public abstract void calcularInteres();
 } 

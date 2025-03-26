@@ -35,6 +35,6 @@ class CocheTest {
 
     @Test
     void testInheritance() {
-        assertTrue(coche instanceof Vehiculo);
+        assertInstanceOf(Vehiculo.class, coche);
     }
 } 
